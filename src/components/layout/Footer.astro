@@ -2,44 +2,29 @@
 import { siteConfig } from "@/config/site";
 ---
 
-<footer class="mt-20 border-t border-border bg-card">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-      <div class="flex flex-col items-center gap-2 md:items-start">
-        <span class="text-lg font-bold text-foreground">{siteConfig.name}</span>
-        <p class="text-sm text-muted-foreground">
-          {siteConfig.description}
-        </p>
-      </div>
-      <div class="flex items-center gap-6">
-        <a
-          href={siteConfig.socialLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Twitter</a
-        >
-        <a
-          href={siteConfig.socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >GitHub</a
-        >
-        <a
-          href={siteConfig.socialLinks.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Discord</a
-        >
-      </div>
+<footer class="border-t border-border bg-muted/50">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8"
+  >
+    <div>
+      <p class="font-bold">{siteConfig.name}</p><p
+        class="mt-1 text-sm text-muted-foreground"
+      >
+        Prova social para negócios que querem crescer.
+      </p>
     </div>
-    <div
-      class="mt-8 border-t border-border pt-8 text-center text-xs text-muted-foreground"
+    <a
+      href="https://wa.me/5511961412794"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-semibold text-primary hover:underline"
+      >Atendimento pelo WhatsApp</a
     >
-      &copy; {new Date().getFullYear()}
-      {siteConfig.author}. All rights reserved.
-    </div>
+  </div>
+  <div
+    class="border-t border-border px-6 py-5 text-center text-xs text-muted-foreground"
+  >
+    © {new Date().getFullYear()}
+    {siteConfig.author}. Todos os direitos reservados.
   </div>
 </footer>

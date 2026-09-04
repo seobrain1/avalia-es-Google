@@ -1,167 +1,322 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { siteConfig } from "@/config/site";
-import Hero from "@/components/widgets/Hero.astro";
-import Features from "@/components/widgets/Features.astro";
-import devImg from "@/assets/images/dev_balanced.png";
-import openSourceImg from "@/assets/images/open-source.png";
-import Content2 from "@/components/widgets/Content2.astro";
-import Github from "@/components/widgets/Github.astro";
-import Integrations from "@/components/widgets/Integrations.astro";
+
+const whatsapp = "https://wa.me/5511961412794";
 const metadata = {
-  title: `${siteConfig.name} — The next step for your project`,
+  title: "Comprar Avaliações Google | Aumente sua prova social",
   description:
-    "A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
+    "Escolha seu pacote de avaliações Google com atendimento pelo WhatsApp, prazo definido e comentários personalizados no plano Profissional.",
   ignoreTitleTemplate: true,
 };
+
+const benefits = [
+  {
+    icon: "01",
+    title: "Pessoas reais",
+    text: "Uma solução pensada para negócios que querem fortalecer sua presença digital.",
+  },
+  {
+    icon: "02",
+    title: "Atendimento próximo",
+    text: "Nossa equipe acompanha você pelo WhatsApp durante todo o processo.",
+  },
+  {
+    icon: "03",
+    title: "Prazo definido",
+    text: "Você sabe exatamente o que está incluído e quando receberá o atendimento.",
+  },
+];
+
+const faqs = [
+  [
+    "Quanto custa comprar avaliações Google?",
+    "O pacote Starter custa R$197 e o Profissional custa R$249. Ambos incluem 10 avaliações.",
+  ],
+  [
+    "Qual é a diferença entre os pacotes?",
+    "O Starter entrega 10 avaliações em até 72 horas. O Profissional inclui comentários personalizados e prazo de até 48 horas.",
+  ],
+  [
+    "Existe atendimento pelo WhatsApp?",
+    "Sim. Nossa equipe orienta você pelo WhatsApp durante o processo de contratação e atendimento.",
+  ],
+  [
+    "As avaliações garantem o primeiro lugar no Google?",
+    "Não. O Google considera relevância, distância e proeminência, entre outros fatores. Nenhum serviço sério pode garantir posicionamento.",
+  ],
+  [
+    "O Google pode remover avaliações?",
+    "Sim. O Google possui políticas contra manipulação e conteúdo que não represente experiências genuínas. Por isso, não prometemos permanência ou aprovação.",
+  ],
+];
 ---
 
 <BaseLayout {metadata}>
-  <Hero
-    title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-    tagline="Astro v5 + Tailwind v4"
-    description={`${siteConfig.description}`}
-    actions={[
-      {
-        text: "Get Started",
-        href: "https://github.com/devgelo-labs/astro-starter-pro",
-        variant: "primary",
-        icon: "lucide:github",
-      },
-      {
-        text: "Our Services",
-        href: "/services",
-        variant: "secondary",
-        icon: "lucide:arrow-right",
-        ariaLabel: "Learn more about our services",
-      },
-    ]}
-  />
-  <Features
-    tagline="Features"
-    title="What's Included"
-    subtitle="A selection of tools and configurations to streamline your workflow."
-    features={[
-      {
-        title: "Optimized SEO",
-        description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-        icon: "lucide:scan-search",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Tailwind v4",
-        description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
-        iconClass: "bg-pink-500/10 text-pink-400",
-      },
-    ]}
-  />
-  <Content2
-    items={[
-      {
-        title: "Responsive Design",
-        description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-        icon: "lucide:scan-search",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Tailwind v4",
-        description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
-        iconClass: "bg-pink-500/10 text-pink-400",
-      },
-    ]}
-    image={devImg}
-    imageAlt="Development"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Development
-      </h3>
-      We provide a solid foundation to start your projects with best practices.
-    </Fragment>
-  </Content2>
-  <Content2
-    items={[
-      {
-        title: "Open Source",
-        description:
-          "Developed under the MIT license, free for personal and commercial use.",
-        icon: "lucide:github",
-        iconClass: "bg-indigo-500/10 text-indigo-400",
-      },
-      {
-        title: "Community Driven",
-        description:
-          "Built with the feedback and contributions of the developer community.",
-        icon: "lucide:users",
-        iconClass: "bg-orange-500/10 text-orange-400",
-      },
-      {
-        title: "Regular Updates",
-        description:
-          "Continuously improved with the latest technologies and best practices.",
-        icon: "lucide:refresh-cw",
-        iconClass: "bg-teal-500/10 text-teal-400",
-      },
-    ]}
-    image={openSourceImg}
-    imageAlt="Community and Open Source"
-    isReversed={true}
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Open Source & Community
-      </h3>
-      Join the revolution of modern web development. This project is open for everyone
-      to use, learn from, and contribute to.
-    </Fragment>
-  </Content2>
-  <Integrations
-    title="Trusted by top companies"
-    subtitle="Our platform integrates seamlessly with your favorite tools."
-    tagline="Integrations"
-    integrations={[
-      { name: "Astro", icon: "tabler:brand-astro", url: "#" },
-      { name: "Tailwind CSS", icon: "tabler:brand-tailwind", url: "#" },
-      { name: "Vercel", icon: "tabler:brand-vercel", url: "#" },
-      { name: "GitHub", icon: "tabler:brand-github", url: "#" },
-    ]}
-  />
-  <Github
-    title="Don't forget to star us!"
-    subtitle="Support this template and keep the project alive. Your stars help us continue improving and adding new features."
-    tagline="Open Source"
-    icon="lucide:github"
-    actions={[
-      {
-        text: "Star on GitHub",
-        href: "https://github.com/devgelo-labs/astro-starter-pro",
-        variant: "primary",
-        icon: "lucide:star",
-      },
-      {
-        text: "Fork Repository",
-        href: "https://github.com/devgelo-labs/astro-starter-pro/fork",
-        variant: "secondary",
-        icon: "lucide:git-fork",
-      },
-    ]}
-  />
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(37,99,235,.28),transparent_38%),radial-gradient(circle_at_15%_85%,rgba(124,58,237,.2),transparent_34%)]"
+    >
+    </div>
+    <div
+      class="relative mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-24 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8 lg:pb-28 lg:pt-32"
+    >
+      <div class="reveal">
+        <p
+          class="mb-6 inline-flex rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm font-semibold text-blue-200"
+        >
+          Sua reputação começa no Google
+        </p>
+        <h1
+          class="max-w-3xl text-balance text-4xl font-black leading-tight tracking-tight sm:text-6xl"
+        >
+          Aumente a quantidade de <span class="text-blue-400">avaliações</span> do
+          seu negócio no Google
+        </h1>
+        <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300">
+          Escolha o pacote ideal para ampliar sua prova social com uma solução
+          prática, atendimento pelo WhatsApp e prazo definido.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-xl bg-blue-500 px-6 py-4 text-center font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-400"
+            >Escolher meu pacote</a
+          >
+          <a
+            href="#como-funciona"
+            class="rounded-xl border border-white/20 px-6 py-4 text-center font-bold text-white transition hover:bg-white/10"
+            >Como funciona</a
+          >
+        </div>
+        <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+          <span>✓ Atendimento no WhatsApp</span><span>✓ Sigilo e discrição</span
+          ><span>✓ Prazo definido</span>
+        </div>
+      </div>
+      <div class="reveal lg:pl-8">
+        <div
+          class="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur sm:p-8"
+        >
+          <div class="mb-8 flex items-center justify-between">
+            <div>
+              <p class="text-sm text-slate-300">Pacote mais escolhido</p><h2
+                class="mt-1 text-2xl font-bold"
+              >
+                Profissional
+              </h2>
+            </div><span
+              class="rounded-full bg-blue-400/20 px-3 py-1 text-xs font-bold text-blue-200"
+              >OFERTA</span>
+          </div>
+          <div class="flex items-end gap-3">
+            <span class="text-5xl font-black">R$249</span><span
+              class="pb-2 text-slate-400 line-through">R$397</span>
+          </div>
+          <ul
+            class="mt-7 flex flex-col gap-4 border-t border-white/10 pt-6 text-slate-200"
+          >
+            <li>✓ 10 avaliações</li><li>✓ Comentários personalizados</li><li>
+              ✓ Pessoas reais
+            </li><li>✓ Entrega em até 48 horas</li>
+          </ul>
+          <a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 block rounded-xl bg-white px-5 py-4 text-center font-bold text-slate-950 transition hover:bg-blue-100"
+            >Falar com atendimento</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background px-6 py-20 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-5 md:grid-cols-3">
+        {
+          benefits.map((item) => (
+            <article class="reveal rounded-2xl border border-border bg-card p-7 shadow-sm">
+              <>
+                <span class="text-sm font-bold text-primary">{item.icon}</span>
+                <h2 class="mt-5 text-xl font-bold">{item.title}</h2>
+                <p class="mt-3 leading-7 text-muted-foreground">{item.text}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="bg-muted/50 px-6 py-20 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-2xl">
+        <p class="font-semibold text-primary">Simples e direto</p><h2
+          class="mt-3 text-3xl font-black tracking-tight sm:text-4xl"
+        >
+          Comprar avaliações Google: como funciona?
+        </h2><p class="mt-4 text-lg leading-8 text-muted-foreground">
+          O processo foi pensado para você escolher, contratar e acompanhar tudo
+          com clareza.
+        </p>
+      </div><div class="mt-12 grid gap-8 md:grid-cols-4">
+        {
+          [
+            {
+              n: "1",
+              t: "Escolha seu pacote",
+              d: "Comece pelo Starter ou escolha o Profissional.",
+            },
+            {
+              n: "2",
+              t: "Faça sua contratação",
+              d: "Receba as orientações necessárias para avançar.",
+            },
+            {
+              n: "3",
+              t: "Fale pelo WhatsApp",
+              d: "Nossa equipe acompanha seu pedido de perto.",
+            },
+            {
+              n: "4",
+              t: "Receba no prazo",
+              d: "Até 72h no Starter ou 48h no Profissional.",
+            },
+          ].map((step) => (
+            <div class="reveal">
+              <>
+                <span class="flex size-11 items-center justify-center rounded-full bg-primary font-bold text-white">
+                  {step.n}
+                </span>
+                <h3 class="mt-5 text-lg font-bold">{step.t}</h3>
+                <p class="mt-2 leading-7 text-muted-foreground">{step.d}</p>
+              </>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="px-6 py-20 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="font-semibold text-primary">Escolha sua opção</p><h2
+          class="mt-3 text-3xl font-black tracking-tight sm:text-4xl"
+        >
+          Planos transparentes para começar
+        </h2><p class="mt-4 text-lg leading-8 text-muted-foreground">
+          Duas opções objetivas, sem burocracia e com atendimento pelo WhatsApp.
+        </p>
+      </div><div class="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
+        <article class="reveal rounded-3xl border border-border bg-card p-8">
+          <p class="font-bold text-primary">STARTER</p><h3
+            class="mt-4 text-3xl font-black"
+          >
+            R$197
+          </h3><p class="mt-1 text-muted-foreground">
+            <span class="line-through">De R$249</span> · ideal para testar
+          </p><ul class="mt-8 flex flex-col gap-4 text-muted-foreground">
+            <li>✓ 10 avaliações</li><li>✓ Pessoas reais</li><li>
+              ✓ Atendimento pelo WhatsApp
+            </li><li>✓ Sigilo e discrição</li><li>✓ Até 72 horas</li>
+          </ul><a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 block rounded-xl border border-primary px-5 py-4 text-center font-bold text-primary transition hover:bg-primary hover:text-white"
+            >Quero o Starter</a>
+        </article><article
+          class="reveal relative rounded-3xl border-2 border-primary bg-slate-950 p-8 text-white shadow-xl shadow-blue-900/10"
+        >
+          <span
+            class="absolute right-6 top-6 rounded-full bg-blue-500 px-3 py-1 text-xs font-bold"
+            >MAIS ESCOLHIDO</span
+          ><p class="font-bold text-blue-300">PROFISSIONAL</p><h3
+            class="mt-4 text-3xl font-black"
+          >
+            R$249
+          </h3><p class="mt-1 text-slate-400">
+            <span class="line-through">De R$397</span> · melhor custo-benefício
+          </p><ul class="mt-8 flex flex-col gap-4 text-slate-200">
+            <li>✓ 10 avaliações</li><li>✓ Comentários personalizados</li><li>
+              ✓ Pessoas reais
+            </li><li>✓ Atendimento pelo WhatsApp</li><li>✓ Até 48 horas</li>
+          </ul><a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 block rounded-xl bg-blue-500 px-5 py-4 text-center font-bold transition hover:bg-blue-400"
+            >Quero o Profissional</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-blue-50 px-6 py-20 lg:px-8">
+    <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="font-semibold text-primary">Informação importante</p><h2
+          class="mt-3 text-3xl font-black tracking-tight sm:text-4xl"
+        >
+          Reputação online é importante. Promessas impossíveis, não.
+        </h2>
+      </div><div
+        class="rounded-2xl border border-blue-200 bg-white p-7 text-slate-700"
+      >
+        <p class="leading-8">
+          As avaliações fazem parte da presença local, mas não garantem o
+          primeiro lugar no Google. O posicionamento considera relevância,
+          distância e proeminência. Também não existe garantia de permanência ou
+          aprovação de qualquer avaliação pelo Google.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="px-6 py-20 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <div class="text-center">
+        <p class="font-semibold text-primary">Tire suas dúvidas</p><h2
+          class="mt-3 text-3xl font-black tracking-tight sm:text-4xl"
+        >
+          Perguntas frequentes
+        </h2>
+      </div><div class="mt-10 flex flex-col gap-3">
+        {
+          faqs.map(([question, answer]) => (
+            <details class="group rounded-2xl border border-border bg-card px-6 py-5">
+              <>
+                <summary class="cursor-pointer list-none pr-8 font-bold marker:hidden">
+                  {question}
+                  <span class="float-right text-primary transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p class="pt-4 leading-7 text-muted-foreground">{answer}</p>
+              </>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 px-6 py-20 text-center text-white lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-black tracking-tight sm:text-5xl">
+        Quer começar agora?
+      </h2><p class="mx-auto mt-5 max-w-xl text-lg leading-8 text-slate-300">
+        Escolha seu pacote e fale com nosso atendimento pelo WhatsApp.
+      </p><a
+        href={whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-block rounded-xl bg-blue-500 px-8 py-4 font-bold transition hover:bg-blue-400"
+        >Comprar avaliações no Google</a>
+    </div>
+  </section>
 </BaseLayout>
